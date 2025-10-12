@@ -1,31 +1,203 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
     <meta charset="utf-8">
-    <title>My test page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ray Jony · 个人主页</title>
     <link href="styles/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<h1>Mozilla is Cool</h1>
-<img src="/images/firefox-logo.png" alt="My test image" width="600" height="623">
-<p>At Mozilla, we're a global community of</p>
+<header class="hero" id="top">
+    <nav class="site-nav">
+        <a class="logo" href="#top">Ray Jony</a>
+        <ul class="nav-links">
+            <li><a href="#about">关于我</a></li>
+            <li><a href="#skills">技能树</a></li>
+            <li><a href="#projects">项目与作品</a></li>
+            <li><a href="#experience">成长轨迹</a></li>
+            <li><a href="#contact">联系我</a></li>
+        </ul>
+        <button class="icon-button" id="theme-toggle" type="button" aria-label="切换主题">🌙</button>
+    </nav>
+    <div class="hero-content">
+        <div class="hero-text">
+            <p class="hero-subtitle">全栈开发者 / 设计爱好者 / 开源贡献者</p>
+            <h1 class="hero-title">你好，我是 <span class="accent">Ray Jony</span></h1>
+            <p class="hero-description">
+                我喜欢把创意转化为有温度的数字体验。从用户体验设计到后端架构，
+                我乐于探索整个产品生命周期中的每一个环节。
+            </p>
+            <div class="hero-actions">
+                <button class="primary" id="customize-greeting" type="button">定制欢迎语</button>
+                <a class="secondary" href="#projects">查看最新作品</a>
+            </div>
+        </div>
+        <figure class="hero-figure">
+            <img class="hero-portrait" src="images/firefox-logo.png" alt="Ray Jony 的肖像插画" width="320" height="332">
+            <figcaption>热爱学习、享受分享的终身学习者</figcaption>
+        </figure>
+    </div>
+</header>
 
-<ul>
-    <li>technologists</li>
-    <li>thinkers</li>
-    <li>builders</li>
-</ul>
+<main>
+    <section class="panel" id="about">
+        <h2>关于我</h2>
+        <p>
+            我是一名好奇心驱动的开发者，专注于打造高质量、可持续的产品体验。
+            在过去的几年里，我曾与初创公司、非营利组织和开源社区合作，完成从概念验证到正式上线的多个项目。
+        </p>
+        <div class="info-grid">
+            <article>
+                <h3>价值观</h3>
+                <ul>
+                    <li>以用户为中心，数据驱动决策</li>
+                    <li>保持透明与持续反馈</li>
+                    <li>拥抱变化，乐于分享知识</li>
+                </ul>
+            </article>
+            <article>
+                <h3>兴趣领域</h3>
+                <ul>
+                    <li>可访问性的设计实践</li>
+                    <li>云原生与微服务架构</li>
+                    <li>创意编程与生成式艺术</li>
+                </ul>
+            </article>
+            <article>
+                <h3>正在学习</h3>
+                <ul>
+                    <li>Rust 与 WebAssembly</li>
+                    <li>设计系统的构建与维护</li>
+                    <li>机器学习在产品中的落地</li>
+                </ul>
+            </article>
+        </div>
+    </section>
 
+    <section class="panel" id="skills">
+        <h2>技能树</h2>
+        <div class="skills-grid">
+            <article class="skill-card">
+                <h3>前端</h3>
+                <p>React、Vue、TypeScript、Tailwind CSS、可访问性审查</p>
+                <div class="skill-meter" data-level="90"><div class="skill-meter__fill" aria-hidden="true"></div><span>90%</span></div>
+            </article>
+            <article class="skill-card">
+                <h3>后端</h3>
+                <p>Node.js、Python、GraphQL、RESTful API、数据库优化</p>
+                <div class="skill-meter" data-level="85"><div class="skill-meter__fill" aria-hidden="true"></div><span>85%</span></div>
+            </article>
+            <article class="skill-card">
+                <h3>设计与协作</h3>
+                <p>Figma、用户研究、设计系统、敏捷开发、跨团队沟通</p>
+                <div class="skill-meter" data-level="80"><div class="skill-meter__fill" aria-hidden="true"></div><span>80%</span></div>
+            </article>
+            <article class="skill-card">
+                <h3>DevOps 与工具链</h3>
+                <p>Docker、CI/CD、GitHub Actions、监控与日志、自动化测试</p>
+                <div class="skill-meter" data-level="75"><div class="skill-meter__fill" aria-hidden="true"></div><span>75%</span></div>
+            </article>
+        </div>
+    </section>
 
-<p>working together…<a href="https://www.mozilla.org/zh-CN/about/manifesto/">Mozilla Manifesto</a>
-</p>
+    <section class="panel" id="projects">
+        <h2>项目与作品</h2>
+        <div class="projects">
+            <article>
+                <h3>多语言学习平台</h3>
+                <p>
+                    构建以语音识别和可视化反馈为核心的学习平台，支持实时纠错并提供个性化学习路径，
+                    帮助上万名学习者提升口语自信。
+                </p>
+                <ul>
+                    <li>负责前端架构搭建与组件化设计</li>
+                    <li>引入数据埋点体系，实现迭代验证</li>
+                    <li>上线后获 App Store 编辑推荐</li>
+                </ul>
+            </article>
+            <article>
+                <h3>开源设计系统「Aurora」</h3>
+                <p>
+                    与社区伙伴共同打造的组件库，强调一致性与可扩展性，面向多品牌场景。
+                    当前已有 50+ 团队采纳，并持续迭代中。
+                </p>
+                <ul>
+                    <li>维护 Storybook 文档与设计规范</li>
+                    <li>引入自动化可访问性检测流程</li>
+                    <li>推动贡献者体验提升与治理机制</li>
+                </ul>
+            </article>
+            <article>
+                <h3>数据可视化工作坊</h3>
+                <p>
+                    策划并主持面向高校的工作坊，结合真实数据集，带领参与者完成从洞察到展示的全过程。
+                </p>
+                <ul>
+                    <li>开发交互式教学示例与课程资料</li>
+                    <li>支持线上线下混合授课模式</li>
+                    <li>课程满意度超过 96%</li>
+                </ul>
+            </article>
+        </div>
+    </section>
 
-<h1>Also web is cool</h1>
+    <section class="panel" id="experience">
+        <h2>成长轨迹</h2>
+        <ol class="timeline">
+            <li>
+                <div class="timeline-card">
+                    <time datetime="2023">2023</time>
+                    <h3>自由职业者</h3>
+                    <p>与跨国团队合作，交付多个 SaaS 产品的 MVP，并完成从 0 到 1 的设计与开发。</p>
+                </div>
+            </li>
+            <li>
+                <div class="timeline-card">
+                    <time datetime="2021">2021</time>
+                    <h3>创意技术工作室 · 资深前端</h3>
+                    <p>主导互动展览的数字化体验，实现 AR 导览与实时数据可视化。</p>
+                </div>
+            </li>
+            <li>
+                <div class="timeline-card">
+                    <time datetime="2019">2019</time>
+                    <h3>互联网初创公司 · 全栈工程师</h3>
+                    <p>打造敏捷研发流程，构建自动化测试体系，让迭代速度提升 3 倍。</p>
+                </div>
+            </li>
+            <li>
+                <div class="timeline-card">
+                    <time datetime="2017">2017</time>
+                    <h3>研究生 · 人机交互方向</h3>
+                    <p>探索可感知技术与用户体验设计，论文入选国际会议。</p>
+                </div>
+            </li>
+        </ol>
+    </section>
 
+    <section class="panel highlight" id="contact">
+        <h2>保持联系</h2>
+        <p>
+            欢迎与我交流产品、技术或任何激发灵感的话题。你可以给我写信，也可以在社交网络找到我。
+        </p>
+        <div class="contact-grid">
+            <a class="contact-card" href="mailto:hello@rayjony.dev">📮 hello@rayjony.dev</a>
+            <a class="contact-card" href="https://github.com/Ray-Jony" target="_blank" rel="noopener">🐙 GitHub</a>
+            <a class="contact-card" href="https://dribbble.com" target="_blank" rel="noopener">🎨 Dribbble</a>
+            <a class="contact-card" href="https://www.linkedin.com" target="_blank" rel="noopener">💼 LinkedIn</a>
+        </div>
+    </section>
+</main>
 
-<button>Switch User</button>
+<footer class="footer">
+    <p>© <span id="copyright-year"></span> Ray Jony · 保持好奇，持续创作</p>
+</footer>
+
+<button class="back-to-top" type="button" id="back-to-top" aria-label="返回顶部">↑</button>
 
 <script src="scripts/main.js" defer></script>
-
 </body>
 </html>
