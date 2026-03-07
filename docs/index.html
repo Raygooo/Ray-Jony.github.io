@@ -1,31 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
     <meta charset="utf-8">
-    <title>My test page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ray's Homepage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link href="styles/style.css" rel="stylesheet">
 </head>
 <body>
-<h1>Mozilla is Cool</h1>
-<img src="/images/firefox-logo.png" alt="My test image" width="600" height="623">
-<p>At Mozilla, we're a global community of</p>
 
-<ul>
-    <li>technologists</li>
-    <li>thinkers</li>
-    <li>builders</li>
-</ul>
+    <!-- Animated background particles -->
+    <div class="bg-particles" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+    </div>
 
+    <div class="page-wrapper">
 
-<p>working together…<a href="https://www.mozilla.org/zh-CN/about/manifesto/">Mozilla Manifesto</a>
-</p>
+        <!-- Hero Section -->
+        <header class="hero">
+            <div class="hero-badge">&#127760; Open Web Advocate</div>
+            <h1 class="hero-title">
+                <span id="greeting-text">Hello, World!</span><span class="cursor">|</span>
+            </h1>
+            <p class="hero-subtitle">Welcome to my corner of the internet.</p>
+            <button class="btn-switch" id="switchUserBtn" aria-label="Change username">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Switch User
+            </button>
+        </header>
 
-<h1>Also web is cool</h1>
+        <!-- Firefox Logo Card -->
+        <section class="card logo-card" aria-label="Firefox logo toggle">
+            <div class="card-inner">
+                <div class="logo-wrapper">
+                    <img
+                        id="firefox-logo"
+                        src="images/firefox-logo.png"
+                        alt="Firefox logo — click to toggle"
+                        class="logo-img"
+                    >
+                    <div class="logo-hint">&#128432; Click to toggle</div>
+                </div>
+            </div>
+        </section>
 
+        <!-- About / Values Section -->
+        <section class="card values-card">
+            <div class="card-inner">
+                <p class="values-intro">At Mozilla, we're a global community of</p>
+                <ul class="values-list">
+                    <li><span class="value-icon">&#128187;</span><span>Technologists</span></li>
+                    <li><span class="value-icon">&#128161;</span><span>Thinkers</span></li>
+                    <li><span class="value-icon">&#128295;</span><span>Builders</span></li>
+                </ul>
+                <p class="values-footer">
+                    working together&hellip;
+                    <a href="https://www.mozilla.org/zh-CN/about/manifesto/" class="manifesto-link" target="_blank" rel="noopener noreferrer">
+                        Mozilla Manifesto &#8599;
+                    </a>
+                </p>
+            </div>
+        </section>
 
-<button>Switch User</button>
+        <!-- Web is Cool Section -->
+        <section class="card tech-card">
+            <div class="card-inner">
+                <h2 class="tech-title">
+                    <span class="code-tag">&lt;</span>The Web is Cool<span class="code-tag">/&gt;</span>
+                </h2>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <span class="tech-label">HTML</span>
+                        <div class="tech-bar"><div class="tech-fill" style="--pct: 90%"></div></div>
+                    </div>
+                    <div class="tech-item">
+                        <span class="tech-label">CSS</span>
+                        <div class="tech-bar"><div class="tech-fill" style="--pct: 85%"></div></div>
+                    </div>
+                    <div class="tech-item">
+                        <span class="tech-label">JavaScript</span>
+                        <div class="tech-bar"><div class="tech-fill" style="--pct: 78%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<script src="scripts/main.js" defer></script>
+        <footer class="site-footer">
+            <p>Built with &#10084;&#65039; using the Open Web &mdash;
+                <a href="https://github.com/Ray-Jony/Ray-Jony.github.io" target="_blank" rel="noopener noreferrer">View Source</a>
+            </p>
+        </footer>
 
+    </div>
+
+    <!-- Name modal -->
+    <div class="modal-overlay hidden" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal">
+            <h2 id="modalTitle">Who are you? &#128075;</h2>
+            <p>Enter your name to personalize this page.</p>
+            <input type="text" id="nameInput" class="modal-input" placeholder="Your name&hellip;" maxlength="30" autocomplete="off">
+            <div class="modal-actions">
+                <button class="btn-cancel" id="cancelBtn">Cancel</button>
+                <button class="btn-confirm" id="confirmBtn">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/main.js" defer></script>
 </body>
 </html>
